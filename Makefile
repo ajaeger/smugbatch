@@ -16,7 +16,7 @@
 #
 #
 
-VERSION = 005
+VERSION = 006
 
 PROGRAM = smugup smugls smugdown
 
@@ -126,8 +126,8 @@ release:
 	git commit -a -m "release $(VERSION)"
 	cat .git/refs/heads/master > .git/refs/tags/$(VERSION)
 	@ echo
-	git-archive --format=tar --prefix=smugbatch-$(VERSION)/ HEAD | gzip -9v > smugbatch-$(VERSION).tar.gz
-	git-archive --format=tar --prefix=smugbatch-$(VERSION)/ HEAD | bzip2 -9v > smugbatch-$(VERSION).tar.bz2
+	git archive --format=tar --prefix=smugbatch-$(VERSION)/ HEAD | gzip -9v > smugbatch-$(VERSION).tar.gz
+	git archive --format=tar --prefix=smugbatch-$(VERSION)/ HEAD | bzip2 -9v > smugbatch-$(VERSION).tar.bz2
 .PHONY: release
 
 
